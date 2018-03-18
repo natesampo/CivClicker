@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<link rel="stylesheet" type="text/css" href="css.css" />
+<body>
+	<div class="tab">
+		<button class="tablinks" onclick="openTab(event,'populationTab')">Population</button>
+		<button class="tablinks" onclick="openTab(event,'mapTab')">Map</button>
+	</div>
+
+
+	<div id ="populationTab" class="tabcontent">
+
+		<section id ="centerColumn">
+			<h2>Population: <span id="population"></span></h2>
+			<h2>Employed Population: <span id="employedPopulation"></span></h2>
+			<h2>Unemployed Population: <span id="unemployedPopulation"></span></h2>
+		</section>
+
+
+		<section id ="centerColumn">
+			<h2>Gathering Food: <span id="foodGathering"></span></h2>
+			<button class = "button" id = "btnAddGatherFood" onclick = "addGatherFood()">
+				Add Gather Food
+			</button>
+			<button class = "button" id = "btnRemoveGatherFood" onclick = "removeGatherFood()">
+				Remove Gather Food
+			</button>
+			<br><br>
+			<h2>Getting Water: <span id="waterGetting"></span></h2>
+			<button class = "button" id = "btnAddGetWater" onclick = "addGetWater()">
+				Add Get Water
+			</button>
+			<button class = "button" id = "btnRemoveGetWater" onclick = "removeGetWater()">
+				Remove Get Water
+			</button>
+		</section>
+
+
+		<section id ="rightColumn">
+			<h2>Food: <span id="food"></span></h2>
+			<h2>Water: <span id="water"></span></h2>
+		</section>
+
+
+		<section id ="topRight">
+			<h3>Year: <span id="year"></span></h3>
+		</section>
+
+	</div>
+
+
+	<div id ="mapTab" class="tabcontent">
+
+		<h2>Hello</h2>
+
+	</div>
+
+
+	<script type="text/javascript" src="globals.js"></script>
+	<script type="text/javascript" src="main.js"></script>
+	<script type="text/javascript" src="map.js"></script>
+</body>
+</html>
