@@ -14,7 +14,7 @@ function cacheDOMElements() {
 	unemployedPopulationElement.innerHTML = population - employedPopulation;
 	dayElement.innerHTML = day;
 	waterElement.innerHTML = water;
-	monthElement.innerHTML = month;
+	monthElement.innerHTML = months[month-1];
 	yearElement.innerHTML = year;
 }
 
