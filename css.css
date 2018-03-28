@@ -22,24 +22,24 @@ html, body {
 
 #dayDisplay {
    height: auto;
-   width: 300px;
-   font-size: 14pt;
+   width: 100px;
+   font-size: 16pt;
    font-weight: normal;
    float: left;
 }
 
 #monthDisplay {
    height: auto;
-   width: 800px;
-   font-size: 14pt;
+   width: 175px;
+   font-size: 16pt;
    font-weight: normal;
    float: left;
 }
 
 #yearDisplay {
    height: auto;
-   width: 300px;
-   font-size: 14pt;
+   width: 100px;
+   font-size: 16pt;
    font-weight: normal;
    float: left;
 }
@@ -78,8 +78,8 @@ html, body {
    position: absolute;
    float: left;
    height: auto;
-   width: 1400px;
-   left: 500px;
+   width: 375px;
+   right: 0%;
    top: 0%;
 }
 
