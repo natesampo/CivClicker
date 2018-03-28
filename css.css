@@ -25,6 +25,7 @@ html, body {
    width: 300px;
    font-size: 14pt;
    font-weight: normal;
+   float: left;
 }
 
 #monthDisplay {
@@ -32,6 +33,7 @@ html, body {
    width: 800px;
    font-size: 14pt;
    font-weight: normal;
+   float: left;
 }
 
 #yearDisplay {
@@ -39,6 +41,7 @@ html, body {
    width: 300px;
    font-size: 14pt;
    font-weight: normal;
+   float: left;
 }
 
 .jobWrapper, .jobCounter {
@@ -76,7 +79,7 @@ html, body {
    float: left;
    height: auto;
    width: 1400px;
-   left: 70%;
+   left: 500px;
    top: 0%;
 }
 
