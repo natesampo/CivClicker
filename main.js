@@ -33,13 +33,13 @@ window.setInterval(function() {
 
 	day += 1;
 
-	if (1+day%30==1){
-		month ++ 
-		day=1
+	if(day > 30) {
+		month ++;
+		day=1;
 	}
-	if (1+month%12==1){
-		year ++ 
-		month=1
+	if(month > 12) {
+		year ++;
+		month=1;
 	}
 	food -= population/100;
 	water -= population/100;
