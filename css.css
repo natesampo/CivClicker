@@ -20,6 +20,27 @@ html, body {
    overflow: hidden;
 }
 
+#dayDisplay {
+   height: auto;
+   width: 300px;
+   font-size: 14pt;
+   font-weight: normal;
+}
+
+#monthDisplay {
+   height: auto;
+   width: 800px;
+   font-size: 14pt;
+   font-weight: normal;
+}
+
+#yearDisplay {
+   height: auto;
+   width: 300px;
+   font-size: 14pt;
+   font-weight: normal;
+}
+
 .jobWrapper, .jobCounter {
    line-height: 50%;
    font-size: 20pt;
@@ -54,8 +75,8 @@ html, body {
    position: absolute;
    float: left;
    height: auto;
-   width: auto;
-   left: 90%;
+   width: 1400px;
+   left: 70%;
    top: 0%;
 }
 

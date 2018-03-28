@@ -4,29 +4,43 @@ function cacheDOMElements() {
 	populationElement = document.getElementById("population");
 	employedPopulationElement = document.getElementById("employedPopulation");
 	unemployedPopulationElement = document.getElementById("unemployedPopulation");
+	dayElement = document.getElementById("day");
+	monthElement = document.getElementById("month");
 	yearElement = document.getElementById("year");
 
 	foodElement.innerHTML = food;
 	populationElement.innerHTML = population;
 	employedPopulationElement.innerHTML = employedPopulation;
 	unemployedPopulationElement.innerHTML = population - employedPopulation;
-	yearElement.innerHTML = year;
+	dayElement.innerHTML = day;
 	waterElement.innerHTML = water;
+	monthElement.innerHTML = month;
+	yearElement.innerHTML = year;
 }
 
 var foodElement;
 var populationElement;
 var employedPopulationElement;
 var unemployedPopulationElement;
-var yearElement;
+var dayElement;
 var waterElement;
+var monthElement;
+var yearElement;
 
 cacheDOMElements();
 
 window.setInterval(function() {
 
-	year += 1;
+	day += 1;
 
+	if (1+day%30==1){
+		month ++ 
+		day=1
+	}
+	if (1+month%12==1){
+		year ++ 
+		month=1
+	}
 	food -= population/100;
 	water -= population/100;
 
@@ -43,9 +57,12 @@ window.setInterval(function() {
 	populationElement.innerHTML = population;
 	employedPopulationElement.innerHTML = employedPopulation;
 	unemployedPopulationElement.innerHTML = population - employedPopulation;
+	dayElement.innerHTML = day;
+	monthElement.innerHTML = months[month-1];
 	yearElement.innerHTML = year;
 
-}, 100);
+
+}, 500);
 
 function cannibalism() {
 	// Kill enough people to make up food deficit:

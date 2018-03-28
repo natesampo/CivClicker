@@ -1,6 +1,9 @@
 //Time
-var year = 0;
+var day = 1;
+var month = 1;
+var year = 1;
 
+var months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
 //Players
 var players = [];
 players.push("Player0");
