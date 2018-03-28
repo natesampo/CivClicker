@@ -1,19 +1,38 @@
 //Time
 var year = 0;
 
+//Players
+var players = [];
+players.push("Player1");
+players.push("Player2");
+
 //Population
 var population = 10;
 var employedPopulation = 0;
-
-var publicJobNames = [];
-var publicJobNums = [];
-var publicJobElements = [];
-var publicJobEffects = [];
 
 //Resources
 var food = 20;
 var water = 10;
 
+//Territories
+var territories = [];
+
+class Territory {
+	constructor(borders, owner) {
+		this.borders = borders;
+		this.owner = owner;
+		territories.push(this);
+	}
+}
+
+new Territory([[5,5], [100,50], [50,100], [10,90]], players[0]);
+new Territory([[100,50], [50,100], [60,120], [65,135], [70,118], [65,110], [90,70]], players[1]);
+
+//Jobs
+var publicJobNames = [];
+var publicJobNums = [];
+var publicJobElements = [];
+var publicJobEffects = [];
 makePublicJob("FoodGathering", Math.round(population/2), function(workers) { food += workers/50 });
 makePublicJob("WaterGetting", Math.round(population/4), function(workers) { water += workers/25 });
 makePublicJob("ConsoleLogging", 1, function(workers) { for(var i=0;i<workers;i++) { console.log("hello") }});
