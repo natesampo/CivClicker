@@ -3,8 +3,8 @@ var year = 0;
 
 //Players
 var players = [];
+players.push("Player0");
 players.push("Player1");
-players.push("Player2");
 
 //Population
 var population = 10;
