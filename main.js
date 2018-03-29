@@ -29,6 +29,10 @@ var yearElement;
 
 cacheDOMElements();
 
+makePublicJob("FoodGathering", Math.round(population/2), function(workers) { food += workers/50 });
+makePublicJob("WaterGetting", Math.round(population/4), function(workers) { water += workers/25 });
+makePublicJob("ConsoleLogging", 1, function(workers) { for(var i=0;i<workers;i++) { console.log("hello") }});
+
 window.setInterval(function() {
 
 	day += 1;
@@ -44,8 +48,8 @@ window.setInterval(function() {
 	food -= population/100;
 	water -= population/100;
 
-	for (var i=0;i<publicJobEffects.length;i++) {
-		publicJobEffects[i](publicJobNums[i]);
+	for (var i=0;i<publicJobs.length;i++) {
+		publicJobs[i].effect(publicJobs[i].workers);
 	}
 
 	if(food < 0) {
