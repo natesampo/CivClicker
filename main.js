@@ -34,37 +34,53 @@ makePublicJob("WaterGetting", Math.round(population/4), function(workers) { wate
 makePublicJob("ConsoleLogging", 1, function(workers) { for(var i=0;i<workers;i++) { console.log("hello") }});
 
 window.setInterval(function() {
+	if(!paused) {
+		day++;
 
-	day += 1;
+		if(day > 30) {
+			month ++;
+			day=1;
+		}
+		if(month > 12) {
+			year ++;
+			month=1;
+		}
+		food -= population/100;
+		water -= population/100;
 
-	if(day > 30) {
-		month ++;
-		day=1;
+		for (var i=0;i<publicJobs.length;i++) {
+			publicJobs[i].effect(publicJobs[i].workers);
+		}
+
+		if(food < 0) {
+			cannibalism();
+		}
+
+		if(water < 0) {
+			var killed = Math.ceil(population/100);
+			if(population > killed) {
+				if(population-employedPopulation >= killed) {
+					population -= killed;
+				} else {
+					population -= killed;
+					employedPopulation = population;
+				}
+			} else {
+				population = 0;
+				employedPopulation = 0;
+			}
+			water = 0;
+		}
+
+		foodElement.innerHTML = Math.round(food);
+		waterElement.innerHTML = Math.round(water);
+		populationElement.innerHTML = population;
+		employedPopulationElement.innerHTML = employedPopulation;
+		unemployedPopulationElement.innerHTML = population - employedPopulation;
+		dayElement.innerHTML = day;
+		monthElement.innerHTML = months[month-1];
+		yearElement.innerHTML = year;
 	}
-	if(month > 12) {
-		year ++;
-		month=1;
-	}
-	food -= population/100;
-	water -= population/100;
-
-	for (var i=0;i<publicJobs.length;i++) {
-		publicJobs[i].effect(publicJobs[i].workers);
-	}
-
-	if(food < 0) {
-		cannibalism();
-	}
-
-	foodElement.innerHTML = Math.round(food);
-	waterElement.innerHTML = Math.round(water);
-	populationElement.innerHTML = population;
-	employedPopulationElement.innerHTML = employedPopulation;
-	unemployedPopulationElement.innerHTML = population - employedPopulation;
-	dayElement.innerHTML = day;
-	monthElement.innerHTML = months[month-1];
-	yearElement.innerHTML = year;
-
 
 }, 500);
 

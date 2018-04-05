@@ -2,6 +2,7 @@
 var day = 1;
 var month = 1;
 var year = 1;
+var paused = false;
 
 var months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
 //Players
